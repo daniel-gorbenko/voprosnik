@@ -1,0 +1,279 @@
+{
+  "menu": {
+    "logout": "Log Out",
+    "billing": "Billing",
+    "support": "Support",
+    "settings": "Settings",
+    "widgets": "My widgets"
+  },
+  "widgets": {
+    "list": "List of your widgets",
+    "add": "Add widget",
+    "empty": "You don't have any widgets, now.",
+    "create": {
+      "success": "Widget successfully created",
+      "create": "Create",
+      "cancel": "Cancel",
+      "title": "Create new widget",
+      "url": {
+        "label": "Your site URL",
+        "placeholder": "savevisitor.com",
+        "error": "Please, fill this field",
+        "incorrect": "Please, type correct url"
+      }
+    }
+  },
+  "errors": {
+    "onlyActive": "Активируйте аккаунт, чтобы выполнять это действие.",
+    "number": "Type correct number",
+    "choose": "Choose at option",
+    "required": "Please fill the field",
+    "hex": "Type correct HEX form, like: #FFFFFF"
+  },
+  "design": {
+    "success": "Design successfully changed",
+    "title": "Design",
+    "template": "Template",
+    "whenShow": "When show",
+    "showDelay": "Delay before show",
+    "buttonBg": "Button background",
+    "buttonColor": "Button text color",
+    "showDelayPlc": "Delay",
+    "save": "Save"
+  },
+  "common": {
+    "cancel": "Cancel",
+    "edit": "Edit",
+    "delete": "Delete",
+    "startPage": "Start page",
+    "question": "Question",
+    "endPage": "Final page"
+  },
+  "endPages": {
+    "create": {
+      "title": "Create final page",
+      "create": "Create",
+      "success": "Final page successfully created"
+    },
+    "edit": {
+      "title": "Edit final page",
+      "save": "Save",
+      "success": "Final page successfully changed"
+    },
+    "component": {
+      "header": {
+        "description": "The final page is shown to users after they answered your questions. It's place where users usually type their contacts."
+      },
+      "title": {
+        "label": "Title",
+        "placeholder": "It's my question"
+      },
+      "description": {
+        "label": "Description",
+        "placeholder": "It's my description"
+      },
+      "button": {
+        "label": "Text on button",
+        "placeholder": "Send"
+      },
+      "placeholder": {
+        "label": "Placeholder",
+        "placeholder": "value"
+      }
+    }
+  },
+  "startPages": {
+    "create": {
+      "title": "Create start page",
+      "create": "Create",
+      "success": "Start page successfully created"
+    },
+    "edit": {
+      "title": "Edit start page",
+      "save": "Save",
+      "success": "Start page successfully changed"
+    },
+    "component": {
+      "header": {
+        "description": "This start page is shown to users in the beginning."
+      },
+      "title": {
+        "label": "Title",
+        "placeholder": "It's my question"
+      },
+      "description": {
+        "label": "Description",
+        "placeholder": "It's my description"
+      },
+      "button": {
+        "label": "Text on button",
+        "placeholder": "Start"
+      },
+      "placeholder": {
+        "label": "Placeholder",
+        "placeholder": "value"
+      }
+    }
+  },
+  "questions": {
+    "create": {
+      "create": "Create",
+      "title": "Create question",
+      "success": "Question successfully created"
+    },
+    "edit": {
+      "save": "Save",
+      "title": "Edit question",
+      "success": "Question successfully changed"
+    },
+    "component": {
+      "title": {
+        "label": "Question",
+        "placeholder": "What is your name?"
+      },
+      "button": {
+        "label": "Text on 'next' button",
+        "placeholder": "Next"
+      },
+      "questionType": {
+        "label": "Question type",
+        "notChangeable": "You can not change question type. You can create new one with type you want and delete this.",
+        "defaultLabel": "Please, choose question type"
+      },
+      "text": {
+        "label": "Prompt",
+        "placeholder": "John"
+      },
+      "option": {
+        "add": "+ Add option №",
+        "delete": "Delete",
+        "placeholder": "Your variant",
+        "title": "Option №"
+      }
+    },
+    "list": {
+      "orderChanged": "Questions order successfully changed",
+      "prompts": {
+        "title": "Before you activate your survey, you should:",
+        "startPage": {
+          "title": "Add start page",
+          "description": "Page that invites users to take a survey."
+        },
+        "questions": {
+          "title": "Add questions",
+          "description": "Questions you want to get responses from users."
+        },
+        "endPage": {
+          "title": "Add final page",
+          "description": "Page where users usually type their contacts."
+        }
+      },
+      "listOfPages": "List of your pages and questions",
+      "emptyList": "You don't have any pages and questions, now.",
+      "addQuestion": "Add question",
+      "order": {
+        "able": "To change order of questions, move them ",
+        "unable": "You can not change the questions order in active state"
+      }
+    }
+  },
+  "answers": {
+    "title": "Responses",
+    "exportCSV": "Export to CSV",
+    "downloadCSV": "Download",
+    "contacts": "Contacts",
+    "empty": {
+      "if": "You don't have any questions. If you ",
+      "setup": "added code",
+      "but": " to your site, but still don't have questions, ",
+      "statistic": "look statistic",
+      "cause": " to find a cause."
+    }
+  },
+  "billing": {
+    "accessTo": "The service is accessible to ",
+    "choosePlan": "Choose tariff plan for you",
+    "tariffs": {
+      "name": "Name",
+      "responses": "Count of responses in a month",
+      "price": "Price per month"
+    },
+    "answersDimension": "responses",
+    "responsesDimension": "responses",
+    "unlimited": "unlimited",
+    "current": "Current",
+    "purchase": "Purchase"
+  },
+  "blocks": {
+    "show": {
+      "enabled": "Widget is enabled",
+      "disabled": "Widget is disabled",
+      "turnOn": "turn on",
+      "turnOff": "turn off",
+      "edit": "Edit",
+      "activate": "Activate",
+      "top": {
+        "oldVersions": "Old versions",
+        "active": "Active",
+        "edit": "Editing"
+      },
+      "menu": {
+        "questions": "Questions",
+        "answers": "Responses",
+        "statistic": "Statistic",
+        "design": "Design",
+        "setup": "Setup",
+        "preview": "Preview"
+      }
+    }
+  },
+  "review": {
+    "notifications": {
+      "startPage": {
+        "no": "You haven't got start page. ",
+        "create": "Create start page"
+      },
+      "questions": {
+        "no": "You haven't any questions. ",
+        "create": "Create question"
+      },
+      "endPage": {
+        "no": "You haven't an end page. ",
+        "create": "Create end page"
+      }
+    }
+  },
+  "statistic": {
+    "title": "Statistic",
+    "table": {
+      "page": "Page",
+      "count": "Count",
+      "conversion": "Conversion",
+      "saw": "Saw widget",
+      "started": "Started answering",
+      "manDimension": "men",
+      "gaveContacts": "Gave contacts"
+    }
+  },
+  "setup": {
+    "title": "Setup widget on your site",
+    "description": "To setup widget on your site, copy text below and past it on your site before </body> tag.",
+    "descriptionBelow": "To select it, just click in the field below."
+  },
+  "versions": {
+    "title": "Available versions"
+  },
+  "filters": {
+    "showTypes": {
+      "open": "On site open",
+      "close": "On site close"
+    },
+    "questionTypes": {
+      "startPage": "Start page",
+      "endPage": "Final page",
+      "text": "Text field",
+      "one": "One of",
+      "many": "Many of"
+    }
+  }
+}

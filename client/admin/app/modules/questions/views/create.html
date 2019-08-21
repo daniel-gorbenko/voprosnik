@@ -1,0 +1,18 @@
+<div class="card">
+  <div class="card-header" ng-bind="'questions.create.title' | translate"></div>
+  <div class="card-content">
+    <form novalidate name="vm.$form" ng-submit="vm.create(vm.data)">
+      <question-create form="vm.$form" data="vm.data"></question-create>
+
+      <div class="row">
+        <div class="col-md-12 text-right">
+          <a ui-sref="blocks.show.questions.list({state: vm.state, id: vm.widgetId})" class="btn btn-default">
+            <span ng-bind="'common.cancel' | translate"></span>
+          </a>
+          <button class="btn btn-primary" ng-bind="'questions.create.create' | translate"></button>
+        </div>
+      </div>
+    </form>
+
+  </div>
+</div>

@@ -1,0 +1,8 @@
+<div class="card">
+  <div class="card-header" ng-bind="'versions.title' | translate"></div>
+  <div class="card-content">
+    <div class="version" ng-repeat="version in vm.versions">
+      <a ui-sref="blocks.show.questions.list({id: vm.widgetId, state: 'version', versionId: version.id})" ng-bind="version.updatedAt | date"></a>
+    </div>
+  </div>
+</div>

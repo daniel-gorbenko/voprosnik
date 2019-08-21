@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+
+  <link rel="stylesheet" href="./widget/css/style.css"/>
+</head>
+<body>
+
+<!-- WIDGET-->
+
+<script>
+
+  (function(){
+    var id = '1';
+    var d = document;
+    var w = window;
+
+    function loadScript() {
+      var s = document.createElement('script');
+
+      s.type = 'text/javascript';
+      s.async = true;
+      s.src = '//localhost:8099/loader/:id'.replace(':id', id);
+
+      var ss = document.getElementsByTagName('script')[0];
+      ss.parentNode.insertBefore(s, ss);
+    }
+
+    if(d.readyState == 'complete'){
+      loadScript();
+    } else{
+      if(w.attachEvent){
+        w.attachEvent('onload', loadScript);
+      } else {
+        w.addEventListener('load', loadScript, false);
+      }
+    }
+
+  })();
+</script>
+
+<!-- WIDGET-->
+
+<!-- WIDGET-->
+
+<!--&lt;!&ndash;<div class="VOPROSNIK" id="VOPROSNIK">&ndash;&gt;-->
+  <!--&lt;!&ndash;<div class="VOPROSNIK-modal">&ndash;&gt;-->
+
+    <!--&lt;!&ndash;<div id="W_VOPROSU-page" class="VOPROSNIK-page">&ndash;&gt;-->
+      <!--&lt;!&ndash;<div class="VOPROSNIK-question">&ndash;&gt;-->
+        <!--&lt;!&ndash;<span class="VOPROSNIK-title">Хотите ли вы узнать уровень своего вождения еще одно слово?</span>&ndash;&gt;-->
+
+        <!--&lt;!&ndash;<div class="VOPROSNIK-question-content">&ndash;&gt;-->
+          <!--&lt;!&ndash;<div class="VOPROSNIK-question-radio">&ndash;&gt;-->
+            <!--&lt;!&ndash;Пе&ndash;&gt;-->
+          <!--&lt;!&ndash;</div>&ndash;&gt;-->
+
+          <!--&lt;!&ndash;<div class="VOPROSNIK-question-radio">&ndash;&gt;-->
+            <!--&lt;!&ndash;Проводник&ndash;&gt;-->
+          <!--&lt;!&ndash;</div>&ndash;&gt;-->
+
+          <!--&lt;!&ndash;<div class="VOPROSNIK-question-radio">&ndash;&gt;-->
+            <!--&lt;!&ndash;Слесарь-автомеханик&ndash;&gt;-->
+          <!--&lt;!&ndash;</div>&ndash;&gt;-->
+
+          <!--&lt;!&ndash;<div class="VOPROSNIK-question-radio">&ndash;&gt;-->
+            <!--&lt;!&ndash;Бизнесмен&ndash;&gt;-->
+          <!--&lt;!&ndash;</div>&ndash;&gt;-->
+        <!--&lt;!&ndash;</div>&ndash;&gt;-->
+
+        <!--&lt;!&ndash;<div class="VOPROSNIK-button" id="W_VOPROSU-check">Далее</div>&ndash;&gt;-->
+      <!--&lt;!&ndash;</div>&ndash;&gt;-->
+    <!--&lt;!&ndash;</div>&ndash;&gt;-->
+
+    <!--&lt;!&ndash;<div class="VOPROSNIK-footer">&ndash;&gt;-->
+      <!--&lt;!&ndash;<div class="VOPROSNIK-footer-close">&ndash;&gt;-->
+        <!--&lt;!&ndash;<a href="#">Спасибо, закрыть</a>&ndash;&gt;-->
+      <!--&lt;!&ndash;</div><div class="VOPROSNIK-footer-already">&ndash;&gt;-->
+      <!--&lt;!&ndash;&lt;!&ndash;<a href="#">Я отвечал на эти вопросы</a>&ndash;&gt;&ndash;&gt;-->
+    <!--&lt;!&ndash;</div>&ndash;&gt;-->
+    <!--&lt;!&ndash;</div>&ndash;&gt;-->
+
+  <!--&lt;!&ndash;</div>&ndash;&gt;-->
+<!--&lt;!&ndash;</div>&ndash;&gt;-->
+
+
+
+
+<!--&lt;!&ndash; Text question &ndash;&gt;-->
+
+
+
+
+<!--&lt;!&ndash;<div class="VOPROSNIK" id="VOPROSNIK">&ndash;&gt;-->
+  <!--&lt;!&ndash;<div class="VOPROSNIK-modal">&ndash;&gt;-->
+
+    <!--&lt;!&ndash;<div id="W_VOPROSU-page" class="VOPROSNIK-page">&ndash;&gt;-->
+      <!--&lt;!&ndash;<div class="VOPROSNIK-question">&ndash;&gt;-->
+        <!--&lt;!&ndash;<span class="VOPROSNIK-title">Хотите ли вы узнать уровень своего вождения еще одно слово?</span>&ndash;&gt;-->
+
+        <!--&lt;!&ndash;<div class="VOPROSNIK-question-content">&ndash;&gt;-->
+          <!--&lt;!&ndash;<input type="text" class="VOPROSNIK-question-input" placeholder="Введите количество ваших детей"/>&ndash;&gt;-->
+        <!--&lt;!&ndash;</div>&ndash;&gt;-->
+
+        <!--&lt;!&ndash;<div class="VOPROSNIK-button" id="W_VOPROSU-check">Далее</div>&ndash;&gt;-->
+      <!--&lt;!&ndash;</div>&ndash;&gt;-->
+    <!--&lt;!&ndash;</div>&ndash;&gt;-->
+
+    <!--&lt;!&ndash;<div class="VOPROSNIK-footer">&ndash;&gt;-->
+      <!--&lt;!&ndash;<div class="VOPROSNIK-footer-close">&ndash;&gt;-->
+        <!--&lt;!&ndash;<a href="#">Спасибо, закрыть</a>&ndash;&gt;-->
+      <!--&lt;!&ndash;</div><div class="VOPROSNIK-footer-already">&ndash;&gt;-->
+      <!--&lt;!&ndash;&lt;!&ndash;<a href="#">Я отвечал на эти вопросы</a>&ndash;&gt;&ndash;&gt;-->
+    <!--&lt;!&ndash;</div>&ndash;&gt;-->
+    <!--&lt;!&ndash;</div>&ndash;&gt;-->
+
+  <!--&lt;!&ndash;</div>&ndash;&gt;-->
+<!--&lt;!&ndash;</div>&ndash;&gt;-->
+
+
+
+<!--&lt;!&ndash; Start Page &ndash;&gt;-->
+
+
+
+
+<!--&lt;!&ndash;<div class="VOPROSNIK" id="VOPROSNIK">&ndash;&gt;-->
+  <!--&lt;!&ndash;<div class="VOPROSNIK-modal">&ndash;&gt;-->
+
+    <!--&lt;!&ndash;<div id="W_VOPROSU-page" class="VOPROSNIK-page">&ndash;&gt;-->
+      <!--&lt;!&ndash;<div class="VOPROSNIK-start">&ndash;&gt;-->
+        <!--&lt;!&ndash;<span class="VOPROSNIK-title">Хотите ли вы узнать уровень своего вождения?</span>&ndash;&gt;-->
+        <!--&lt;!&ndash;<div class="VOPROSNIK-button" id="W_VOPROSU-check">Проверить</div>&ndash;&gt;-->
+      <!--&lt;!&ndash;</div>&ndash;&gt;-->
+    <!--&lt;!&ndash;</div>&ndash;&gt;-->
+
+    <!--&lt;!&ndash;<div class="VOPROSNIK-footer">&ndash;&gt;-->
+      <!--&lt;!&ndash;<div class="VOPROSNIK-footer-close">&ndash;&gt;-->
+        <!--&lt;!&ndash;<a href="#">Спасибо, закрыть</a>&ndash;&gt;-->
+      <!--&lt;!&ndash;</div><div class="VOPROSNIK-footer-already">&ndash;&gt;-->
+        <!--&lt;!&ndash;&lt;!&ndash;<a href="#">Я отвечал на эти вопросы</a>&ndash;&gt;&ndash;&gt;-->
+      <!--&lt;!&ndash;</div>&ndash;&gt;-->
+    <!--&lt;!&ndash;</div>&ndash;&gt;-->
+
+  <!--&lt;!&ndash;</div>&ndash;&gt;-->
+<!--&lt;!&ndash;</div>&ndash;&gt;-->
+
+
+
+<!--&lt;!&ndash; End page &ndash;&gt;-->
+
+
+<!--&lt;!&ndash;<div class="VOPROSNIK" id="VOPROSNIK">&ndash;&gt;-->
+  <!--&lt;!&ndash;<div class="VOPROSNIK-modal">&ndash;&gt;-->
+
+    <!--&lt;!&ndash;<div id="W_VOPROSU-page" class="VOPROSNIK-page">&ndash;&gt;-->
+      <!--&lt;!&ndash;<div class="VOPROSNIK-end-page">&ndash;&gt;-->
+        <!--&lt;!&ndash;<span class="VOPROSNIK-title">Вы удивительный человек!</span>&ndash;&gt;-->
+
+        <!--&lt;!&ndash;<div class="VOPROSNIK-end-description">&ndash;&gt;-->
+          <!--&lt;!&ndash;Вы нас очень удивили своим мастерством отвечать на вопросы.&ndash;&gt;-->
+        <!--&lt;!&ndash;</div>&ndash;&gt;-->
+
+        <!--&lt;!&ndash;<input type="text" class="VOPROSNIK-question-input" placeholder="mail@mail.ru"/>&ndash;&gt;-->
+
+        <!--&lt;!&ndash;<div class="VOPROSNIK-button VOPROSNIK-button-end" id="W_VOPROSU-check">Получить скидку</div>&ndash;&gt;-->
+      <!--&lt;!&ndash;</div>&ndash;&gt;-->
+    <!--&lt;!&ndash;</div>&ndash;&gt;-->
+
+    <!--&lt;!&ndash;<div class="VOPROSNIK-footer">&ndash;&gt;-->
+      <!--&lt;!&ndash;<div class="VOPROSNIK-footer-close">&ndash;&gt;-->
+        <!--&lt;!&ndash;<a href="#">Спасибо, закрыть</a>&ndash;&gt;-->
+      <!--&lt;!&ndash;</div><div class="VOPROSNIK-footer-already">&ndash;&gt;-->
+      <!--&lt;!&ndash;&lt;!&ndash;<a href="#">Я отвечал на эти вопросы</a>&ndash;&gt;&ndash;&gt;-->
+    <!--&lt;!&ndash;</div>&ndash;&gt;-->
+    <!--&lt;!&ndash;</div>&ndash;&gt;-->
+
+  <!--&lt;!&ndash;</div>&ndash;&gt;-->
+<!--&lt;!&ndash;</div>&ndash;&gt;-->
+
+
+
+<!--&lt;!&ndash;Container&ndash;&gt;-->
+
+<!--<div class="VOPROSNIK" id="VOPROSNIK">-->
+  <!--<div class="VOPROSNIK-modal">-->
+
+    <!--<div id="W_VOPROSU-page" class="VOPROSNIK-page"></div>-->
+
+    <!--<div class="VOPROSNIK-footer">-->
+      <!--<div class="VOPROSNIK-footer-close">-->
+        <!--<div class="VOPROSNIK-footer-close-link" id="W_VOPROSU-close">Спасибо, закрыть</div>-->
+      <!--</div><div class="VOPROSNIK-footer-already">-->
+    <!--</div>-->
+    <!--</div>-->
+
+  <!--</div>-->
+<!--</div>-->
+
+<!--&lt;!&ndash;Start page&ndash;&gt;-->
+
+<!--<div class="VOPROSNIK-start">-->
+  <!--<span class="VOPROSNIK-title">{{title}}</span>-->
+  <!--<div class="VOPROSNIK-button" id="W_VOPROSU-check">{{buttonText}}</div>-->
+<!--</div>-->
+
+
+<!--&lt;!&ndash;End page&ndash;&gt;-->
+
+<!--<div class="VOPROSNIK-end-page">-->
+  <!--<span class="VOPROSNIK-title">{{title}}</span>-->
+
+  <!--<div class="VOPROSNIK-end-description">{{description}}</div>-->
+
+  <!--<input type="text" id="W_VOPROSU-data" class="VOPROSNIK-question-input" placeholder="{{placeholder}}"/>-->
+
+  <!--<div class="VOPROSNIK-button VOPROSNIK-button-end" id="W_VOPROSU-send">{{buttonText}}</div>-->
+<!--</div>-->
+
+<!--&lt;!&ndash;Question&ndash;&gt;-->
+
+<!--<div class="VOPROSNIK-question">-->
+  <!--<span class="VOPROSNIK-title">{{title}}</span>-->
+
+  <!--<div class="VOPROSNIK-question-content">{{question}}</div>-->
+
+  <!--<div class="VOPROSNIK-button" id="W_VOPROSU-question-next">{{buttonText}}</div>-->
+<!--</div>-->
+
+<!--&lt;!&ndash; Question text &ndash;&gt;-->
+
+<!--<input type="text" id="W_VOPROSU-data" class="VOPROSNIK-question-input" placeholder="{{placeholder}}"/>-->
+
+<!--&lt;!&ndash; QuestionOne, QuestionMany &ndash;&gt;-->
+
+<!--<div class="VOPROSNIK-question-radio W_VOPROSU-data" data-value="{{id}}">{{value}}</div>-->
+
+<!--</body>-->
+<!--</html>-->

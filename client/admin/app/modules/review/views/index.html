@@ -1,0 +1,38 @@
+<div class="content">
+  <div class="container">
+
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card card--no-content">
+          <div class="card-header">Пример шапки на сайте</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-header">Пример заголовока на сайте</div>
+          <div class="card-content">
+            Пример описание чего-то
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <widget warnings="vm.warnings" on-close="vm.onClose(widget)" data="vm.widgetData"></widget>
+</div>
+
+<div ng-show="vm.warnings.start" class="warning-full">
+  <span ng-bind="'review.notifications.startPage.no' | translate"></span><a ng-click="vm.onCreateStart()" ng-bind="'review.notifications.startPage.create' | translate"></a>
+</div>
+
+<div ng-show="vm.warnings.questions" class="warning-full">
+  <span ng-bind="'review.notifications.questions.no' | translate"></span><a ng-click="vm.onCreateQuestions()" ng-bind="'review.notifications.questions.create' | translate"></a>
+</div>
+
+<div ng-show="vm.warnings.end" class="warning-full">
+  <span ng-bind="'review.notifications.endPage.no' | translate"></span><a ng-click="vm.onCreateEnd()" ng-bind="'review.notifications.endPage.create' | translate"></a>
+</div>

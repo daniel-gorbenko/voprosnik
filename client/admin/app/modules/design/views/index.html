@@ -1,0 +1,90 @@
+<div class="card">
+  <div class="card-header" ng-bind="'design.title' | translate"></div>
+  <div class="card-content">
+    <form novalidate name="vm.$form" ng-submit="vm.onSave(vm.data)" ng-if="vm.isDataLoaded()">
+
+      <div class="row">
+        <div class="col-md-12">
+          <div class="form-group">
+            <label ng-bind="'design.template ' | translate"></label>
+
+            <select ng-model="vm.data.templateId" ng-options="template.id as template.name for template in vm.templates" class="form-control">
+
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group" ng-class="{'has-error': vm.$form.colorMain.$invalid && vm.$form.$submitted}">
+            <label ng-bind="'design.buttonBg' | translate"></label>
+
+            <div class="input-group">
+              <input autocomplete="off" required colorpicker="hex" name="colorMain" ng-minlength="7" ng-maxlength="7" ng-model="vm.data.colorMain" type="text" class="form-control" placeholder="#FFF000"/>
+
+              <span colorpicker="hex" ng-model="vm.data.colorMain" class="input-group-addon color-addon" ng-style="{background: vm.data.colorMain}"></span>
+            </div>
+
+            <div class="help-block" ng-show="vm.$form.colorMain.$invalid && vm.$form.$submitted">
+              <span ng-bind="'errors.hex' | translate"></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6" ng-class="{'has-error': vm.$form.colorAdditional.$invalid && vm.$form.$submitted}">
+          <div class="form-group">
+            <label ng-bind="'design.buttonColor' | translate"></label>
+
+            <div class="input-group">
+              <input autocomplete="off" required colorpicker="hex" name="colorAdditional" ng-minlength="7" ng-maxlength="7" ng-model="vm.data.colorAdditional" type="text" class="form-control" placeholder="#000FFF"/>
+
+              <span colorpicker="hex" ng-model="vm.data.colorAdditional" class="input-group-addon color-addon" ng-style="{background: vm.data.colorAdditional}"></span>
+            </div>
+
+            <div class="help-block" ng-show="vm.$form.colorAdditional.$invalid && vm.$form.$submitted">
+              <span ng-bind="'errors.hex' | translate"></span>
+            </div>
+          </div>
+
+          <!--<div class="input-group">-->
+            <!--<span class="input-group-addon">$</span>-->
+            <!--<input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">-->
+            <!--<span class="input-group-addon">.00</span>-->
+          <!--</div>-->
+        </div>
+      </div>
+
+      <div class="row">
+
+        <div class="col-md-12">
+          <div class="form-group">
+            <label ng-bind="'design.whenShow' | translate"></label>
+
+            <select ng-model="vm.data.showType" ng-options="showType as showType | showType | translate for (key, showType) in vm.showTypes" class="form-control">
+
+            </select>
+          </div>
+
+          <div class="form-group" ng-if="vm.isOpenShowType()" ng-class="{'has-error': vm.$form.showDelay.$invalid && vm.$form.$submitted}">
+            <label ng-bind="'design.showDelay' | translate"></label>
+
+            <input name="showDelay" ng-min="0" ng-model="vm.data.showDelay" type="number" placeholder="{{'design.showDelayPlc' | translate}}" class="form-control"/>
+
+            <div class="help-block" ng-show="vm.$form.showDelay.$invalid && vm.$form.$submitted">
+              <span ng-bind="'errors.number' | translate"></span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-12 text-right">
+          <button type="submit" class="btn btn-primary" ng-bind="'design.save' | translate"></button>
+        </div>
+      </div>
+
+    </form>
+  </div>
+</div>

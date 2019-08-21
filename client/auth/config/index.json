@@ -1,0 +1,28 @@
+{
+  "development": {
+    "urls": {
+      "signup": "//localhost:8088/signup",
+      "login": "//localhost:8088/login",
+      "features": "/features",
+      "pricing": "/pricing",
+      "admin": {
+        "widgets": "//localhost:8088/widgets",
+        "pricing": "//localhost:8088/billing",
+        "settings": "//localhost:8088/settings"
+      }
+    }
+  },
+  "production": {
+    "urls": {
+      "signup": "//admin.savevisitor.com/signup",
+      "login": "//admin.savevisitor.com/login",
+      "features": "/features",
+      "pricing": "/pricing",
+      "admin": {
+        "widgets": "//admin.savevisitor.com/widgets",
+        "pricing": "//admin.savevisitor.com/billing",
+        "settings": "//admin.savevisitor.com/settings"
+      }
+    }
+  }
+}

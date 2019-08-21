@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{{voc.landing.title}}</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans&amp;subset=cyrillic" rel="stylesheet">
+  <link rel="stylesheet" href="bundle.css"/>
+</head>
+<body class="auth-body">
+  <div class="wrapper">
+    <div class="auth">
+
+      <div class="container">
+        <div class="row">
+          <div class="col-md-1"> </div>
+          <div class="col-md-4"> </div>
+
+          <div class="col-md-6">
+            <h1>{{voc.signup.title}}</h1>
+
+            <p>
+              {{voc.signup.loginText}} <a href="/login?lang={{lang}}">{{voc.signup.login}}</a>
+            </p>
+
+            <form action="/signup?lang={{lang}}" method="post" class="form">
+
+              <div class="form-group {{#errors.email}}has-error{{/errors.email}}">
+                <label for="email">{{voc.fields.email}}</label>
+                <input type="text" id="email" value="{{data.email}}" name="email" class="form-control"/>
+
+                <div class="help-block">
+                  {{errors.email.message}}
+                </div>
+              </div>
+
+              <div class="form-group {{#errors.name}}has-error{{/errors.name}}">
+                <label for="name">{{voc.fields.name}}</label>
+                <input type="text" id="name" value="{{data.name}}" name="name" class="form-control"/>
+
+                <div class="help-block">
+                  {{errors.name.message}}
+                </div>
+              </div>
+
+              <div class="form-group {{#errors.password}}has-error{{/errors.password}}">
+                <label for="password">{{voc.fields.password}}</label>
+                <input type="password" id="password" name="password" class="form-control"/>
+
+                <div class="help-block">
+                  {{errors.password.message}}
+                </div>
+              </div>
+
+              <div class="auth-actions">
+
+                <div class="form-group">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <button type="submit" class="btn btn-lg btn-primary">{{voc.signup.button}}</button>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="auth-actions-agree">
+                        {{voc.signup.agree.before}} <a href="#">{{voc.signup.agree.rules}}</a> {{voc.signup.agree.and}} <a href="">{{voc.signup.agree.policy}}</a>.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </form>
+
+            <div class="auth-actions-terms">
+              {{voc.terms}}
+            </div>
+          </div>
+
+          <div class="col-md-1"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

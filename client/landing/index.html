@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{{voc.landing.title}}</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans&amp;subset=cyrillic" rel="stylesheet">
+  <link rel="stylesheet" href="bundle.css"/>
+</head>
+<body>
+  <div class="wrapper">
+    <header class="header">
+      <nav>
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-7">
+              <ul class="menu list list-inline">
+                <li><a href="/">
+                  <img src="img/logo.png" alt=""/>
+                </a></li>
+                <li><a href="<%= urls.features %>">{{voc.landing.menu.features}}</a></li>
+                <li><a href="<%= urls.pricing %>">{{voc.landing.menu.pricing}}</a></li>
+                <li><a >{{voc.landing.menu.blog}}</a></li>
+              </ul>
+              <div class="clearfix"></div>
+            </div>
+            <div class="col-md-5 text-right" >
+              <a href="<%= urls.signup %>?lang={{lang}}" class="btn btn-primary">{{voc.landing.signup.text}}</a>
+
+              <ul class="menu menu--right list list-inline">
+                <li><a href="<%= urls.login %>?lang={{lang}}" >{{voc.landing.login.text}}</a></li>
+              </ul>
+              <div class="clearfix"></div>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <div class="home">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-6">
+            <h1 class="main-title">{{voc.landing.home.header}}</h1>
+
+            <p class="main-description">{{voc.landing.home.description}}</p>
+
+            <a href="<%= urls.signup %>?lang={{lang}}" class="btn btn-lg btn-primary main-button">{{voc.landing.signup.text}}</a>
+          </div>
+        </div>
+
+        <div class="row features">
+          <div class="col-md-4">
+            <div class="feature">
+              <h2 class="feature-title">{{voc.landing.home.blocks.features.title}}</h2>
+              <div class="feature-description">
+                {{voc.landing.home.blocks.features.description}}
+              </div>
+
+              <a href="<%= urls.features %>" class="feature-link">
+                {{voc.landing.home.blocks.features.link}}
+              </a>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="feature">
+              <h2 class="feature-title">{{voc.landing.home.blocks.pricing.title}}</h2>
+              <div class="feature-description">
+                {{voc.landing.home.blocks.pricing.description}}
+              </div>
+
+              <a href="<%= urls.pricing %>" class="feature-link">
+                {{voc.landing.home.blocks.pricing.link}}
+              </a>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="feature">
+              <h2 class="feature-title">{{voc.landing.home.blocks.business.title}}</h2>
+              <div class="feature-description">
+                {{voc.landing.home.blocks.business.description}}
+              </div>
+
+              <a href="<%= urls.signup %>?lang={{lang}}" class="feature-link">
+                {{voc.landing.home.blocks.business.link}}
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <div class="footer-content">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-4">
+
+            </div>
+
+            <div class="col-md-2">
+              <div class="menu">
+                <h3 class="menu-header">{{voc.landing.footer.admin.title}}</h3>
+
+                <ul class="menu-list list list-unstyled">
+                  <li><a href="<%= urls.admin.widgets %>">{{voc.landing.footer.admin.widgets}}</a></li>
+                  <li><a href="<%= urls.admin.pricing %>">{{voc.landing.footer.admin.pricing}}</a></li>
+                  <li><a href="<%= urls.admin.settings %>">{{voc.landing.footer.admin.settings}}</a></li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="col-md-2">
+              <div class="menu">
+                <h3 class="menu-header">{{voc.landing.footer.project.title}}</h3>
+
+                <ul class="menu-list list list-unstyled">
+                  <li><a >{{voc.landing.footer.project.about}}</a></li>
+                  <li><a >{{voc.landing.footer.project.career}}</a></li>
+                  <li><a >{{voc.landing.footer.project.press}}</a></li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="col-md-2">
+              <div class="menu">
+                <h3 class="menu-header">{{voc.landing.footer.tutorials.title}}</h3>
+
+                <ul class="menu-list list list-unstyled">
+                  <li><a >{{voc.landing.footer.tutorials.questions}}</a></li>
+                  <li><a >{{voc.landing.footer.tutorials.statistic}}</a></li>
+                  <li><a >{{voc.landing.footer.tutorials.phones}}</a></li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="col-md-2">
+              <div class="menu">
+                <h3 class="menu-header">{{voc.landing.footer.contact.title}}</h3>
+
+                <ul class="menu-list list list-unstyled">
+                  <li><a >{{voc.landing.footer.contact.team}}</a></li>
+                  <li><a >{{voc.landing.footer.contact.investors}}</a></li>
+                  <li><a >{{voc.landing.footer.contact.press}}</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <!-- WIDGET-->
+
+  <script>
+
+    (function(){
+      var id = '{{voc.landing.widget.id}}';
+      var d = document;
+      var w = window;
+
+      function loadScript() {
+        var s = document.createElement('script');
+
+        s.type = 'text/javascript';
+        s.async = true;
+        s.src = '//api.savevisitor.com/loader/:id'.replace(':id', id);
+
+        var ss = document.getElementsByTagName('script')[0];
+        ss.parentNode.insertBefore(s, ss);
+      }
+
+      if(d.readyState == 'complete'){
+        loadScript();
+      } else{
+        if(w.attachEvent){
+          w.attachEvent('onload', loadScript);
+        } else {
+          w.addEventListener('load', loadScript, false);
+        }
+      }
+
+    })();
+  </script>
+
+  <!-- WIDGET-->
+</body>
+</html>

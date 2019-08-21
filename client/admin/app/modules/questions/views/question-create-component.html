@@ -1,0 +1,87 @@
+ <div class="form-group">
+    <p>
+      Чтобы использовать ответы на предыдущие вопросы, пишите следующее <code ng-non-bindable>{{answer:3}}</code>, где 3 - номер вопроса по порядку, сверху вниз.
+      Например, чтобы использовать ответ на второй вопрос, можно написать стак: "<code ng-non-bindable>{{answer:2}}</code>, мы очень рады видеть Вас сегодня."
+    </p>
+  </div>
+
+  <div class="form-group" ng-class="{'has-error': vm.$form.title.$invalid && vm.$form.$submitted}">
+    <label ng-bind="'questions.component.title.label' | translate"></label>
+    <input required name="title" ng-model="vm.data.title" type="text" class="form-control" placeholder="{{'questions.component.title.placeholder' | translate}}"/>
+
+
+    <div class="help-block" ng-show="vm.$form.title.$invalid && vm.$form.$submitted">
+      <span ng-bind="'errors.required' | translate"></span>
+    </div>
+  </div>
+
+  <div class="form-group" ng-class="{'has-error': vm.$form.buttonText.$invalid && vm.$form.$submitted}">
+    <label ng-bind="'questions.component.button.label' | translate"></label>
+    <input required name="buttonText" ng-model="vm.data.buttonText" type="text" class="form-control" placeholder="{{'questions.component.button.placeholder' | translate}}"/>
+
+    <div class="help-block" ng-show="vm.$form.buttonText.$invalid && vm.$form.$submitted">
+      <span ng-bind="'errors.required' | translate"></span>
+    </div>
+  </div>
+
+  <div ng-if="!vm.isEditing()" class="form-group" ng-class="{'has-error': vm.$form.type.$invalid && vm.$form.$submitted}">
+    <label ng-bind="'questions.component.questionType.label' | translate"></label>
+
+    <select ng-change="vm.onQuestionTypeChange(vm.data.type)" required name="type" ng-model="vm.data.type" ng-options="type as type | questionType | translate for (key, type) in vm.questionTypes" class="form-control">
+      <option value="" disabled ng-bind="'questions.component.questionType.defaultLabel' | translate"></option>
+    </select>
+
+    <div class="help-block" ng-show="vm.$form.type.$invalid && vm.$form.$submitted">
+      <span ng-bind="'errors.choose' | translate"></span>
+    </div>
+  </div>
+
+  <div ng-if="vm.isEditing()" class="form-group">
+    <p class="color-empty" ng-bind="'questions.component.questionType.notChangeable' | translate">
+    </p>
+  </div>
+
+  <div ng-if="vm.data.type === vm.Constants.questionTypes.text" ng-class="{'has-error': vm.$form.placeholder.$invalid && vm.$form.$submitted}">
+    <div class="form-group">
+      <label ng-bind="'questions.component.text.label' | translate"></label>
+
+      <input required name="placeholder" ng-model="vm.data.placeholder" type="text" class="form-control" placeholder="{{'questions.component.text.placeholder' | translate}}"/>
+
+      <div class="help-block" ng-show="vm.$form.placeholder.$invalid && vm.$form.$submitted">
+        <span ng-bind="'errors.choose' | translate"></span>
+      </div>
+    </div>
+  </div>
+
+  <div class="question-options" ng-if="vm.data.type === vm.Constants.questionTypes.one || vm.data.type === vm.Constants.questionTypes.many">
+
+    <table>
+      <tr class="row" ng-repeat="option in vm.data.options | filter:vm.notDeleted">
+
+        <td colspan="3" class="col-md-10 col-lg-11">
+          <div class="form-group" ng-class="{'has-error': vm.$form['options_'+$index].$invalid && vm.$form.$submitted}">
+            <label>
+              <span ng-bind="'questions.component.option.title' | translate"></span><span ng-bind="$index + 1"></span></label>
+
+            <input required name="options_{{$index}}" ng-blur="vm.markOptionAsUpdated(option)" ng-model="option.value" type="text" class="form-control" placeholder="{{'questions.component.option.placeholder' | translate}}"/>
+
+            <div class="help-block" ng-show="vm.$form['options_'+$index].$invalid && vm.$form.$submitted">
+              <span ng-bind="'errors.required' | translate"></span>
+            </div>
+          </div>
+        </td>
+
+        <td class="col-md-2 col-lg-1 text-right">
+          <a href="#" class="link" ng-click="vm.markOptionAsDeleted(option)">
+            <span ng-bind="'questions.component.option.delete' | translate"></span>
+          </a>
+        </td>
+
+      </tr>
+    </table>
+
+    <a href="#" class="pointer" ng-click="vm.addOption({questionId: vm.data.id})">
+      <span ng-bind="'questions.component.option.add' | translate"></span><span ng-bind="(vm.data.options.length || 0) + 1"></span>
+    </a>
+
+  </div>

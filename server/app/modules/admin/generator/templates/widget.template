@@ -1,0 +1,33 @@
+(function(global) {
+
+  global['{{windowConfigField}}'] = {{{settings}}};
+
+  var version = '{{widgetVersion}}';
+  var d = document;
+  var w = window;
+
+  function loadScript() {
+    var s = document.createElement('script');
+
+    s.type = 'text/javascript';
+    s.async = true;
+    s.src = '//cdn.savevisitor.com/widget.js?version=:version'.replace(':version', version);
+    var ss = document.getElementsByTagName('script')[0];
+    ss.parentNode.insertBefore(s, ss);
+  }
+
+  function loadCss() {
+      var style = document.createElement('STYLE');
+
+      style.innerHTML = global['{{windowConfigField}}'].template.css;
+      style.type = "text/css";
+
+      var head = document.getElementsByTagName('head')[0];
+
+      head.appendChild(style);
+  }
+
+  loadCss();
+  loadScript();
+
+})(window);

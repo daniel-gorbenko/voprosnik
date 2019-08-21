@@ -1,0 +1,154 @@
+{
+  "landing": {
+    "title": "Save Client",
+    "home": {
+      "header": "Keep clients of your business",
+      "description": "It's not a secret, that more than 95% of users leave sites, don't giving any information about themselves.",
+      "blocks": {
+        "features": {
+          "title": "Features",
+          "description": "Fill your target audience base using visitors contacts.",
+          "link": "View Features"
+        },
+        "pricing": {
+          "title": "Pricing",
+          "description": "Increase tariff, only when your business grows.",
+          "link": "View Pricing"
+        },
+        "business": {
+          "title": "Start 7 days trial",
+          "description": "Check how it works for you and your business.",
+          "link": "Start now"
+        }
+      }
+    },
+    "features": {
+      "title": "Tools that work",
+      "description": "Exactly in this way subscribe popups work. Irritating, unpleasant windows, only you wanna do is CLOSE them. Be careful.",
+      "openTariffs": "View Pricing",
+      "startUse": "Start 7 days trial",
+      "or": "or",
+      "answers":{
+        "title": "Information and contacts",
+        "description": "You can collect not only contacts, but also any other information like car model, wife's name and phone."
+      },
+      "statistic":{
+        "title": "Responses funnel",
+        "description": "Using responses funnel you can recognize questions which don't convert users to next questions (bad questions), and then write better ones instead of them."
+      },
+      "constructor":{
+        "title": "Page constructor",
+        "description": "Create questions and start collecting contacts - easy. Don't leave clients, which didn't take your offer, just propose them unique offer, but a little bit later."
+      }
+    },
+    "pricing": {
+      "title": "Choose right tariff for self.",
+      "tariffs": {
+        "start": {
+          "title": "For self"
+        },
+        "business": {
+          "title": "Business"
+        },
+        "company": {
+          "title": "Enterprise"
+        },
+        "labels": {
+          "select": "Select",
+          "answers": "responses",
+          "funnel": "responses funnel",
+          "to": "to",
+          "reviews": "responses",
+          "month": "month",
+          "unlimited": "unlimited",
+          "trial": "days free",
+          "select": "Select"
+        }
+      },
+      "startUse": "Start 7 days trial"
+    },
+    "menu": {
+      "features": "Features",
+      "blog": "Blog",
+      "pricing": "Pricing"
+    },
+    "signup": {
+      "text": "Start 7 days trial"
+    },
+    "login": {
+      "text": "Log In"
+    },
+    "widget": {
+      "id": "1"
+    },
+    "footer": {
+      "admin": {
+        "title": "Admin panel",
+        "widgets": "Widgets",
+        "pricing": "Billing",
+        "settings": "Settings"
+      },
+      "project": {
+        "title": "Project",
+        "about": "About SaveClient",
+        "press": "Press about us",
+        "career": "Career"
+      },
+      "tutorials": {
+        "title": "Tutorials",
+        "questions": "Correct questions",
+        "statistic": "Analyze statistic",
+        "phones": "Getting phones"
+      },
+      "contact": {
+        "title": "Contacts",
+        "team": "Team",
+        "investors": "Investors",
+        "press": "Press"
+      }
+    }
+  },
+  "signup": {
+    "title": "Trial period 7 days",
+    "button": "Sign Up",
+    "login": "Log In is here",
+    "loginText": "Start getting contacts and users data in 1 hour after registration. Already have SaveClient account?",
+    "agree": {
+      "before": "By clicking this button, you agree with",
+      "rules": "rules",
+      "and": "and",
+      "policy": "privacy police"
+    }
+  },
+  "login": {
+    "title": "Log In",
+    "error": "Email or password is incorrect",
+    "button": "Log In",
+    "signupText": "Need SaveClient account?",
+    "signup": "Sign Up"
+  },
+  "verify": {
+    "title": "Check your email",
+    "message": "We've sent mail to email you specified"
+  },
+  "mail": {
+    "verification": {
+      "subject": "Sign Up Confirmation",
+      "message": "To confirm sign up, just click this link :link"
+    }
+  },
+  "errors": {
+    "notActive": "Activate your account, to perform this action.",
+    "email": "Enter email",
+    "unique.email": "This email already exist",
+    "len.name": "The name is too short",
+    "len.password": "The password should be more than 6 characters"
+  },
+  "fields": {
+    "email": "Email",
+    "password": "Password",
+    "name": "First name"
+  },
+  "terms": "©2016 SaveClient - all rights reserved.",
+  "contacts": "Contacts"
+}

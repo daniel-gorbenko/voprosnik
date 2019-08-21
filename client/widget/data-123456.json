@@ -1,0 +1,88 @@
+{
+  "id": 123456,
+  "cssPath": "css/style.css",
+  "questions": [
+    {
+      "id": 1,
+      "data": {
+        "next": "Далее",
+        "question": "Какая у вас машина?",
+        "placeholder": "
+      },
+      "type": "input"
+    },
+    {
+      id: 2,
+      data: {
+        next: "Далее",
+        question: "Какой у вас стаж?"
+      },
+      type: "radio",
+      options: [
+        "Менее двух лет",
+        "От 2 до 4 лет",
+        "Более 5 лет",
+        "Свыше 10 лет",
+      ]
+    },
+    {
+      id: 3,
+      data: {
+        next: "Узнать результаты",
+        question: "Как вас зовут?",
+        placeholder: "Данил"
+      },
+      type: "input"
+    }
+  ],
+  questions_count: 3,
+  pages: {
+    start: {
+      check: "Проверить за 25 секунд",
+      title: "Хороший ли вы водитель?",
+      description: "Ответьте на 3 простые вопроса и узнайте насколько вы хороший водитель."
+    },
+    end: {
+      type: "input",
+      send: "Получить",
+      title: "{{answer:3}}, отлично",
+      description: "У нас есть несколько предложений по улучшению качества вашей машины.",
+      placeholder: "Введите свой телефон"
+    },
+    question: {
+      next: "Следующий"
+    }
+  },
+  type: "full",
+  templates: {
+    container: "<div class=\"W_VOPROSU-container\"><div class=\"W_VOPROSU-content\">"<div id=\"W_VOPROSU-page\"></div>"<div class=\"W_VOPROSU-footer\">"
+    <a class=\"W_VOPROSU-link W_VOPROSU-link-close\" href=\"#\" id=\"W_VOPROSU-close\">Нет, спасибо, закрыть</a>" +
+    <a class=\"W_VOPROSU-link W_VOPROSU-link-alreay\" href=\"#\" id=\"W_VOPROSU-already\">Я уже проходил(а) это тест</a>" +
+    <div style=\"clear: both;\"></div>"
+    </div>"
+    </div>"
+    </div>"
+",
+    start:
+    "<div class=\"W_VOPROSU-start\">" +
+    "<span class=\"W_VOPROSU-header\">{{title}}</span>" +
+    "<p class=\"W_VOPROSU-description\">{{description}}</p>" +
+    "<button class=\"W_VOPROSU-btn W_VOPROSU-btn-start\" id=\"W_VOPROSU-check\">{{check}}</button>" +
+    "</div>",
+
+    end:
+    "<div class=\"W_VOPROSU-end\">" +
+    "<span class=\"W_VOPROSU-header\">{{title}}</span>" +
+    "<p class=\"W_VOPROSU-description\">{{description}}</p>" +
+    "<div class=\"W_VOPROSU-question-content\">{{$input}}</div>" +
+    "<button class=\"W_VOPROSU-btn W_VOPROSU-btn-end\" id=\"W_VOPROSU-send\">{{send}}</button>" +
+    "</div>",
+
+    question:
+    "<div class=\"W_VOPROSU-question\">" +
+    "<span class=\"W_VOPROSU-header\">{{question}}</span>" +
+    "<div class=\"W_VOPROSU-question-content\">{{$question}}</div>" +
+    "<button class=\"W_VOPROSU-btn\" id=\"W_VOPROSU-question-next\">{{next}}</button>" +
+    "</div>"
+  }
+}

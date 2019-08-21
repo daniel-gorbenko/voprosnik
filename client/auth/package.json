@@ -1,0 +1,21 @@
+{
+  "name": "landing-voprosnik",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "development": "NODE_ENV=development ./node_modules/gulp/bin/gulp.js;",
+    "production": "NODE_ENV=production ./node_modules/gulp/bin/gulp.js;"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "gulp-watch": "^4.3.10"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-clean-css": "^2.0.13",
+    "gulp-concat": "^2.6.0",
+    "gulp-template": "^4.0.0"
+  }
+}

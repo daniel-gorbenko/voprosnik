@@ -1,0 +1,88 @@
+<div class="card">
+  <div class="card-header" ng-bind="'statistic.title' | translate"></div>
+  <div class="card-content">
+
+    <table class="stats" ng-if="vm.isDataLoaded()">
+      <tbody>
+        <tr class="stat-header">
+          <th class="stat-cell">
+            <div ng-bind="'statistic.table.page' | translate">
+
+            </div>
+          </th>
+          <th class="stat-cell">
+            <div ng-bind="'statistic.table.count' | translate">
+
+            </div>
+          </th>
+          <th class="stat-cell">
+            <div ng-bind="'statistic.table.conversion' | translate">
+
+            </div>
+          </th>
+        </tr>
+
+        <tr class="stat-row">
+          <td class="stat-cell">
+            <div ng-bind="'statistic.table.saw' | translate">
+
+            </div>
+          </td>
+          <td class="stat-cell">
+            <span ng-bind="vm.visits"></span> <span class="stat-dimension" ng-bind="'statistic.table.manDimension' | translate"></span>
+          </td>
+          <td class="stat-cell">
+            <span ng-bind="vm.getConversion(vm.visits, vm.visits)"></span>
+            <span class="stat-dimension">%</span>
+          </td>
+        </tr>
+
+        <tr class="stat-row">
+          <td class="stat-cell">
+            <div ng-bind="'statistic.table.started' | translate">
+
+            </div>
+          </td>
+          <td class="stat-cell">
+            <span ng-bind="vm.opens"></span> <span class="stat-dimension" ng-bind="'statistic.table.manDimension' | translate"></span>
+          </td>
+          <td class="stat-cell">
+            <span ng-bind="vm.getConversion(vm.opens, vm.visits)"></span>
+            <span class="stat-dimension">%</span>
+          </td>
+        </tr>
+
+        <tr class="stat-row" ng-repeat="question in vm.questions track by question.id">
+          <td class="stat-cell">
+            <span ng-bind="question.title"></span>
+          </td>
+          <td class="stat-cell">
+            <span ng-bind="question.quantity"></span>
+            <span class="stat-dimension" ng-bind="'statistic.table.manDimension' | translate"></span>
+          </td>
+          <td class="stat-cell">
+            <span ng-bind="vm.getConversion(question.quantity, vm.visits)"></span>
+            <span class="stat-dimension">%</span>
+          </td>
+        </tr>
+
+        <tr class="stat-row">
+          <td class="stat-cell">
+            <div ng-bind="'statistic.table.gaveContacts' | translate">
+
+            </div>
+          </td>
+          <td class="stat-cell">
+            <span ng-bind="vm.contacts"></span> <span class="stat-dimension" ng-bind="'statistic.table.manDimension' | translate"></span>
+          </td>
+          <td class="stat-cell">
+            <span ng-bind="vm.getConversion(vm.contacts, vm.visits)"></span>
+            <span class="stat-dimension">%</span>
+          </td>
+        </tr>
+
+      </tbody>
+    </table>
+
+  </div>
+</div>

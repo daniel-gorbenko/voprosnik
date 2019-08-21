@@ -1,0 +1,55 @@
+<nav class="header navbar navbar-static-top">
+
+  <div class="container">
+
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Вопросник</a>
+    </div>
+
+    <ul class="nav navbar-nav">
+      <li ui-sref-active-eq="active">
+        <a ui-sref="blocks.list" ng-bind="'menu.widgets' | translate"></a>
+      </li>
+      <li ui-sref-active-eq="active">
+        <a ui-sref="billing" ng-bind="'menu.billing' | translate"></a>
+      </li>
+      <li><a href="#" ng-bind="'menu.settings' | translate"></a></li>
+    </ul>
+
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="#" ng-bind="'menu.support' | translate"></a></li>
+      <li>
+        <a ng-href="{{vm.logoutUrl}}" ng-bind="'menu.logout' | translate"></a>
+      </li>
+    </ul>
+
+  </div>
+
+</nav>
+
+<div class="content">
+  <ui-view></ui-view>
+</div>
+
+<div class="footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <ul class="list list-inline footer-menu">
+          <li><a href="#">Мои виджеты</a></li>
+          <li><a href="#">Оплата</a></li>
+          <li><a href="#">Настройки</a></li>
+          <li><a href="#">Поддержка</a></li>
+        </ul>
+      </div>
+
+      <div class="col-md-6 text-right">
+        <ul class="list list-inline footer-menu">
+          <li><a href="#">О проекте</a></li>
+          <li><a href="#">Вакансии</a></li>
+          <li><a href="#">Новости</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

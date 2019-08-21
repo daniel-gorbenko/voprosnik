@@ -1,0 +1,117 @@
+<div ng-if="vm.isDataLoaded()">
+
+  <!-- Prompts. Steps to create widget -->
+
+  <div ng-if="vm.showPrompts()" class="card mb30">
+    <div class="card-header" ng-bind="'questions.list.prompts.title' | translate"></div>
+
+    <div class="card-content">
+
+      <div class="planes">
+
+        <a ng-if="!vm.hasStartPage()" ui-sref="blocks.show.startPages.create({id: vm.widgetId})" class="plane plane--link">
+          <div class="plane-title" ng-bind="'questions.list.prompts.startPage.title' | translate"></div>
+
+          <div class="plane-description" ng-bind="'questions.list.prompts.startPage.description' | translate">
+
+          </div>
+        </a>
+
+        <a ng-if="!vm.hasQuestions()" ui-sref="blocks.show.questions.create({id: vm.widgetId})" class="plane plane--link">
+          <div class="plane-title" ng-bind="'questions.list.prompts.questions.title' | translate"></div>
+
+          <div class="plane-description" ng-bind="'questions.list.prompts.questions.description' | translate">
+
+          </div>
+        </a>
+
+        <a ng-if="!vm.hasEndPage()" ui-sref="blocks.show.endPages.create({id: vm.widgetId})" class="plane plane--link">
+          <div class="plane-title" ng-bind="'questions.list.prompts.endPage.title' | translate"></div>
+
+          <div class="plane-description" ng-bind="'questions.list.prompts.endPage.description' | translate">
+
+          </div>
+        </a>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+<!-- List of user's questions -->
+
+<div class="card" ng-if="vm.isDataLoaded()">
+  <div class="card-header" ng-bind="'questions.list.listOfPages' | translate"></div>
+
+  <div class="card-content">
+
+    <p ng-if="vm.isEmptyWidget()" class="color-empty text-center">
+      <span ng-bind="'questions.list.emptyList' | translate"></span>
+    </p>
+
+      <div ng-if="vm.hasStartPage()" class="plane mb30 plane--page">
+        <div class="plane-title" ng-bind="vm.startPage.title"></div>
+
+        <div class="plane-description">
+          <span ng-bind="'common.startPage' | translate"></span>
+          <div ng-if="vm.isEditStateNow()" class="plane-description-actions">
+            <a ui-sref="blocks.show.startPages.edit({blockId: vm.widgetId, startPageId: vm.startPage.id})" class="btn btn-xs btn-primary">
+              <span ng-bind="'common.edit' | translate"></span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+    <p ng-if="vm.isEditStateNow() && vm.hasQuestions()" class="color-empty plane-adaptive">
+      <span ng-bind="'questions.list.order.able' | translate"></span> <i class="glyphicon glyphicon-move"></i>
+      <a ng-if="vm.isEditStateNow()" class="fl_r" ui-sref="blocks.show.questions.create({id: vm.widgetId})">
+        <span ng-bind="'questions.list.addQuestion' | translate"></span>
+      </a>
+    </p>
+
+    <p ng-if="!vm.isEditStateNow()" class="color-empty plane-adaptive">
+      <span ng-bind="'questions.list.order.unable' | translate"></span>
+    </p>
+
+      <ul class="questions-list" dnd-list="vm.questions" ng-if="vm.hasQuestions()">
+
+        <li dnd-disable-if="!vm.isEditStateNow()" dnd-moved="vm.onMoved(question)" dnd-effect-allowed="move" dnd-draggable="question" class="plane plane--question" ng-repeat="question in vm.questions">
+          <div class="plane-title" ng-bind="question.title"></div>
+
+          <div class="plane-description">
+            <span ng-bind="'common.question' | translate"></span> - <span ng-bind="question.type | questionType | translate"></span>
+            <div ng-if="vm.isEditStateNow()" class="plane-description-actions">
+              <a ui-sref="blocks.show.questions.edit({blockId: vm.widgetId, questionId: question.id})" class="btn btn-xs btn-primary">
+                <span ng-bind="'common.edit' | translate"></span>
+              </a>
+              <a ng-click="vm.onRemove(question)" class="btn btn-xs btn-danger">
+                <span ng-bind="'common.delete' | translate"></span>
+              </a>
+            </div>
+          </div>
+        </li>
+
+        <li class="dndPlaceholder plane plane--question">
+          <div class="plane-title">&nbsp</div>
+
+          <div class="plane-description">&nbsp</div>
+        </li>
+
+      </ul>
+
+      <div ng-if="vm.hasEndPage()" class="plane plane--page">
+        <div class="plane-title" ng-bind="vm.endPage.title"></div>
+
+        <div class="plane-description">
+          <span ng-bind="'common.endPage' | translate"></span>
+          <div ng-if="vm.isEditStateNow()" class="plane-description-actions">
+            <a ui-sref="blocks.show.endPages.edit({blockId: vm.widgetId, endPageId: vm.endPage.id})" class="btn btn-xs btn-primary">
+              <span ng-bind="'common.edit' | translate"></span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+  </div>
+</div>

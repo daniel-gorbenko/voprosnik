@@ -1,0 +1,32 @@
+ <div class="form-group">
+    <p ng-bind="'endPages.component.header.description' | translate">
+          </p>
+  </div>
+
+  <div class="form-group" ng-class="{'has-error': vm.$form.title.$invalid && vm.$form.$submitted}">
+    <label ng-bind="'endPages.component.title.label' | translate"></label>
+    <input required name="title" ng-model="vm.data.title" type="text" class="form-control" placeholder="{{'endPages.component.title.placeholder' | translate}}"/>
+
+    <div class="help-block" ng-show="vm.$form.title.$invalid && vm.$form.$submitted">
+      <span ng-bind="'errors.required' | translate"></span>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label ng-bind="'endPages.component.description.label' | translate"></label>
+    <textarea ng-model="vm.data.description" rows="1" class="form-control" placeholder="{{'endPages.component.description.placeholder' | translate}}"></textarea>
+  </div>
+
+  <div class="form-group">
+    <label ng-bind="'endPages.component.placeholder.label' | translate"></label>
+    <input name="placeholder" ng-model="vm.data.placeholder" type="text" class="form-control" placeholder="{{'endPages.component.placeholder.placeholder' | translate}}"/>
+  </div>
+
+  <div class="form-group" ng-class="{'has-error': vm.$form.buttonText.$invalid && vm.$form.$submitted}">
+    <label ng-bind="'endPages.component.button.label' | translate"></label>
+    <input required name="buttonText" ng-model="vm.data.buttonText" type="text" class="form-control" placeholder="{{'endPages.component.button.placeholder' | translate}}"/>
+
+    <div class="help-block" ng-show="vm.$form.buttonText.$invalid && vm.$form.$submitted">
+      <span ng-bind="'errors.required' | translate"></span>
+    </div>
+  </div>

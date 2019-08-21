@@ -1,0 +1,38 @@
+<div class="container">
+
+  <div class="row content-title">
+    <div class="col-md-12">
+      <div class="card card--no-content">
+        <h3 class="card-header">
+          <span ng-bind="'widgets.list' | translate"></span>
+          <a ui-sref="blocks.create" ng-bind="'widgets.add' | translate" href="#" class="btn btn-primary card-header-action"></a>
+        </h3>
+      </div>
+    </div>
+  </div>
+
+  <!-- List of widgets -->
+
+  <div class="row" ng-if="vm.widgets.length > 0">
+
+    <div class="col-md-4" ng-repeat="widget in vm.widgets track by widget.id">
+      <div class="card card--round card--widget">
+        <a ng-bind="widget.url" ui-sref="blocks.show.questions.list({id: widget.id, state: vm.getCurrentWidgetState(widget)})" class="widget-name" ></a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- You don't have any widgets. Create new one -->
+
+  <div class="row" ng-if="vm.widgets.length === 0">
+
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-content" ng-bind="'widgets.empty' | translate"></div>
+      </div>
+    </div>
+
+  </div>
+
+</div>

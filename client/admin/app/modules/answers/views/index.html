@@ -1,0 +1,50 @@
+<div class="card">
+  <div class="card-header">
+    <span ng-bind="'answers.title' | translate"></span>
+    <button ng-hide="vm.downloadUrl" ng-click="vm.onExport('csv')" class="btn btn-md btn-primary card-header-action" ng-bind="'answers.exportCSV' | translate"></button>
+    <a ng-show="vm.downloadUrl" ng-click="vm.downloadFile(vm.downloadUrl)" class="card-header-action-link"> <span ng-bind="'answers.downloadCSV' | translate"></span>
+      <span ng-bind="vm.exportFileName"></span>
+    </a>
+  </div>
+
+  <div class="card-content">
+    <div ng-if="vm.isDataLoaded()" >
+
+      <table class="stats" ng-if="vm.answersCollections.length">
+        <tbody>
+        <tr class="stat-header">
+          <th class="stat-cell" ng-repeat="question in vm.sortedNeededQuestions">
+            <div ng-bind="question.title"></div>
+          </th>
+          <th class="stat-cell">
+            <div>
+              <span ng-bind="'answers.contacts' | translate"></span>
+            </div>
+          </th>
+        </tr>
+
+        <tr class="stat-row" ng-repeat="collection in vm.answersCollections track by collection.id">
+          <td class="stat-cell" ng-repeat="question in vm.sortedNeededQuestions">
+            <span ng-bind="vm.getAnswerToQuestion(question, collection.answers) || '--'"></span>
+          </td>
+
+          <td class="stat-cell">
+            <span ng-bind="collection.contact.value"></span>
+          </td>
+
+        </tr>
+
+        </tbody>
+      </table>
+    </div>
+
+    <div ng-if="!vm.answersCollections.length">
+      <p class="text-center color-empty">
+        <span ng-bind="'answers.empty.if' | translate"></span><a ui-sref="blocks.show.setup({blockId: vm.blockId})"><span ng-bind="'answers.empty.setup' | translate"></span></a>
+        <span ng-bind="'answers.empty.but' | translate"></span><a ui-sref="blocks.show.statistic({blockId: vm.blockId})"><span ng-bind="'answers.empty.statistic' | translate"></span></a>
+        <span ng-bind="'answers.empty.cause' | translate"></span>
+      </p>
+    </div>
+
+  </div>
+</div>

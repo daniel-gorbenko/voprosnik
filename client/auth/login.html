@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{{voc.landing.title}}</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans&amp;subset=cyrillic" rel="stylesheet">
+  <link rel="stylesheet" href="bundle.css"/>
+</head>
+<body class="auth-body">
+<div class="wrapper">
+  <div class="auth">
+
+    <div class="container">
+      <div class="row">
+        <div class="col-md-1"> </div>
+        <div class="col-md-4"> </div>
+
+        <div class="col-md-6">
+          <h1>{{voc.login.title}}</h1>
+
+          <p>
+            {{voc.login.signupText}} <a href="/signup?lang={{lang}}">{{voc.login.signup}}</a>
+          </p>
+
+          <form action="/login?lang={{lang}}" method="post" class="form">
+
+            {{#error}}
+              <div class="alert alert-danger">
+                {{voc.login.error}}
+              </div>
+            {{/error}}
+
+            <div class="form-group">
+              <label for="name">{{voc.fields.email}}</label>
+              <input type="text" value="{{data.email}}" id="name" name="email" class="form-control"/>
+            </div>
+
+            <div class="form-group">
+              <label for="password">{{voc.fields.password}}</label>
+              <input type="password" id="password" name="password" class="form-control"/>
+            </div>
+
+            <div class="auth-actions">
+
+              <div class="form-group">
+                <div class="row">
+                  <div class="col-md-12">
+                    <button type="submit" class="btn btn-lg btn-primary">{{voc.login.button}}</button>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </form>
+
+          <div class="auth-actions-terms">
+            {{voc.terms}}
+          </div>
+        </div>
+
+        <div class="col-md-1"></div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

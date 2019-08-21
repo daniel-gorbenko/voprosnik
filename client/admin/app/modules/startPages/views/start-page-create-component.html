@@ -1,0 +1,22 @@
+ <div class="form-group">
+    <p ng-bind="'startPages.component.header.description' | translate">
+    </p>
+  </div>
+
+  <div class="form-group" ng-class="{'has-error': vm.$form.title.$invalid && vm.$form.$submitted}">
+    <label ng-bind="'startPages.component.title.label' | translate"></label>
+    <input required name="title" ng-model="vm.data.title" type="text" class="form-control" placeholder="{{'startPages.component.title.placeholder' | translate}}"/>
+
+    <div class="help-block" ng-show="vm.$form.title.$invalid && vm.$form.$submitted">
+      <span ng-bind="'errors.required' | translate"></span>
+    </div>
+  </div>
+
+  <div class="form-group" ng-class="{'has-error': vm.$form.buttonText.$invalid && vm.$form.$submitted}">
+    <label ng-bind="'startPages.component.button.label' | translate"></label>
+    <input required name="buttonText" ng-model="vm.data.buttonText" type="text" class="form-control" placeholder="{{'startPages.component.button.placeholder' | translate}}"/>
+
+    <div class="help-block" ng-show="vm.$form.buttonText.$invalid && vm.$form.$submitted">
+      <span ng-bind="'errors.required' | translate"></span>
+    </div>
+  </div>

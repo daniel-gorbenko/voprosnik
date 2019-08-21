@@ -1,0 +1,84 @@
+<div class="container" ng-if="vm.widget">
+  <div class="row">
+    <div class="col-lg-3 col-md-4">
+      <div class="card">
+        <div class="sidebar">
+          <div class="sidebar-header">
+            <span class="sidebar-header-name" ng-bind="vm.widget.url"></span>
+            <span class="sidebar-header-description">
+              <span ng-show="vm.isActiveStateNow() && !vm.hasEditBlock(vm.widget)" >
+                <a ng-click="vm.onEdit()" class="link" ng-bind="'blocks.show.edit' | translate"></a>
+              </span>
+
+              <span ng-show="vm.isEditStateNow()" class="color-online">
+                <a ng-click="vm.onActivate()" class="link" ng-bind="'blocks.show.activate' | translate"></a>
+              </span>
+            </span>
+          </div>
+
+
+          <div class="sidebar-panel" ng-if="vm.isActiveStateNow()">
+            <span ng-show="vm.isActiveBlock(vm.block)" class="color-online">
+              <span ng-bind="'blocks.show.enabled' | translate"></span>
+              <a ng-click="vm.turnOffWidget()" class="link" ng-bind="'blocks.show.turnOff' | translate"></a>
+            </span>
+
+            <span ng-hide="vm.isActiveBlock(vm.block)">
+              <span ng-bind="'blocks.show.disabled' | translate"></span>
+              <a ng-click="vm.turnOnWidget()" class="link" ng-bind="'blocks.show.turnOn' | translate"></a>
+            </span>
+          </div>
+
+          <ul class="sidebar-menu list-unstyled" ng-hide="vm.isVersionStateNow()">
+            <li ui-sref-active="active">
+              <a ui-sref="blocks.show.questions.list({blockId: vm.id})"> <i class="icon glyphicon glyphicon-list"></i> <span ng-bind="'blocks.show.menu.questions' | translate"></span></a>
+            </li>
+
+            <li ng-if="!vm.isEditStateNow()" ui-sref-active="active">
+              <a ui-sref="blocks.show.answers({blockId: vm.id})"> <i class="icon glyphicon glyphicon-check"></i> <span ng-bind="'blocks.show.menu.answers' | translate"></span></a>
+            </li>
+
+            <li ng-if="!vm.isEditStateNow()" ui-sref-active="active">
+              <a ui-sref="blocks.show.statistic({blockId: vm.id})"> <i class="icon glyphicon glyphicon-stats"></i> <span ng-bind="'blocks.show.menu.statistic' | translate"></span></a>
+            </li>
+
+            <li ui-sref-active="active">
+              <a ui-sref="blocks.show.setup({blockId: vm.id})"> <i class="icon glyphicon glyphicon-wrench"></i> <span ng-bind="'blocks.show.menu.setup' | translate"></span></a>
+            </li>
+
+            <li ui-sref-active="active">
+              <a ui-sref="blocks.show.design({blockId: vm.id})"> <i class="icon glyphicon glyphicon-cog"></i> <span ng-bind="'blocks.show.menu.design' | translate"></span></a>
+            </li>
+
+            <li ui-sref-active="active">
+              <a ng-click="vm.review()" target="_blank" class="pointer"> <i class="icon glyphicon glyphicon-eye-open"></i> <span ng-bind="'blocks.show.menu.preview' | translate"></span></a>
+            </li>
+          </ul>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-9 col-md-8">
+      <ul class="widget-state-menu">
+        <li ng-if="vm.hasVersions(vm.widget)" ng-class="{active: vm.$state.includes('blocks.show.versions') || vm.$state.includes('blocks.show', {state: 'version'})}">
+          <a ui-sref="blocks.show.versions({id: vm.widgetId, state: 'versions', versionId: null})">
+            <span ng-bind="'blocks.show.top.oldVersions' | translate"></span>
+          </a>
+        </li>
+        <li ng-if="vm.hasActiveBlock(vm.widget)" ng-class="{active: vm.$state.includes('blocks.show', {state: 'active'})}">
+          <a ui-sref="blocks.show.questions.list({id: vm.widgetId, state: 'active', versionId: null})">
+            <span ng-bind="'blocks.show.top.active' | translate"></span>
+          </a>
+        </li>
+        <li ng-if="vm.hasEditBlock(vm.widget)" ng-class="{active: vm.$state.includes('blocks.show', {state: 'edit'})}">
+          <a ui-sref="blocks.show.questions.list({id: vm.widgetId, state: 'edit', versionId: null})">
+            <span ng-bind="'blocks.show.top.edit' | translate"></span>
+          </a>
+        </li>
+      </ul>
+
+      <ui-view></ui-view>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,37 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <div class="card">
+
+        <h3 class="card-header" ng-bind="'widgets.create.title' | translate"></h3>
+
+        <div class="card-content">
+          <form novalidate ng-submit="vm.create(vm.widget)" name="vm.$form" class="form">
+            <div class="form-group" ng-class="{'has-error': vm.$form.url.$invalid && vm.$form.$submitted}">
+              <label for="url" ng-bind="'widgets.create.url.label' | translate"></label>
+
+              <input name="url" required ng-model="vm.widget.url" id="url" type="text" class="form-control" placeholder="{{'widgets.create.url.placeholder' | translate}}"/>
+
+              <div class="help-block" ng-show="vm.$form.url.$error.required && vm.$form.$submitted">
+                <span ng-bind="'widgets.create.url.error' | translate"></span>
+              </div>
+
+              <div class="help-block" ng-show="vm.error.errors.url && vm.$form.$submitted">
+                <span ng-bind="'widgets.create.url.incorrect' | translate" ></span>
+              </div>
+            </div>
+
+            <div class="text-right">
+              <a ui-sref="blocks.list" class="btn btn-default" >
+                <span ng-bind="'widgets.create.cancel' | translate"></span>
+              </a>
+              <button type="submit" class="btn btn-primary">
+                <span ng-bind="'widgets.create.create' | translate"></span>
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

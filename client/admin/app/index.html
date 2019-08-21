@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en" ng-app="app" ng-strict-di>
+<head>
+    <script>
+      window.lang = '{{lang}}';
+      window.user = {{{user}}};
+    </script>
+
+    <meta charset="UTF-8">
+    <title>Вопросник - Админ панель</title>
+
+    <base href="/">
+</head>
+<body>
+    <div class="wrapper">
+        <ui-view></ui-view>
+    </div>
+
+</body>
+</html>

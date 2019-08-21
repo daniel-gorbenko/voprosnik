@@ -1,0 +1,44 @@
+<div class="card">
+  <div class="card-header" ng-bind="'setup.title' | translate"></div>
+  <div class="card-content">
+    <p>
+      <span ng-bind="'setup.description' | translate"></span>
+      <br/>
+      <span  ng-bind="'setup.descriptionBelow' | translate"></span>
+    </p>
+    <textarea onclick="this.select()" rows="15" class="code">&lt;!-- WIDGET--&gt;
+
+  &lt;script&gt;
+
+    (function(){
+      var id = '{{vm.blockId}}';
+      var d = document;
+      var w = window;
+
+      function loadScript() {
+        var s = document.createElement('script');
+
+        s.type = 'text/javascript';
+        s.async = true;
+        s.src = '//api.savevisitor.com/loader/:id'.replace(':id', id);
+
+        var ss = document.getElementsByTagName('script')[0];
+        ss.parentNode.insertBefore(s, ss);
+      }
+
+      if(d.readyState == 'complete'){
+        loadScript();
+      } else{
+        if(w.attachEvent){
+          w.attachEvent('onload', loadScript);
+        } else {
+          w.addEventListener('load', loadScript, false);
+        }
+      }
+
+    })();
+  &lt;/script&gt;
+
+  &lt;!-- WIDGET--&gt;</textarea>
+  </div>
+</div>

@@ -1,0 +1,87 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card card--no-content">
+        <div class="card-header">
+          <span ng-if="vm.userService.isUserActive()">
+            <span ng-bind="'billing.accessTo' | translate"></span> <span ng-bind="vm.userService.getUser().accessTo | date"></span>
+          </span>
+
+          <span ng-if="!vm.userService.isUserActive()">
+            <span ng-bind="'billing.payToStart' | translate"></span>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="tariffs" ng-if="false">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-header" ng-bind="'billing.choosePlan' | translate"></div>
+          <div class="card-content">
+
+            <table class="stats">
+              <tbody>
+
+              <tr class="stat-header">
+                <th class="stat-cell">
+                  <div ng-bind="'billing.tariffs.name' | translate">
+
+                  </div>
+                </th>
+                <th class="stat-cell">
+                  <div ng-bind="'billing.tariffs.responses' | translate">
+                  </div>
+                </th>
+                <th class="stat-cell">
+                  <div ng-bind="'billing.tariffs.price' | translate">
+                  </div>
+                </th>
+
+                <th class="stat-cell">
+                  <div>
+
+                  </div>
+                </th>
+              </tr>
+
+
+              <tr class="stat-row" ng-repeat="tariff in vm.tariffs">
+                <td class="stat-cell">
+                  <div ng-bind="tariff.name"></div>
+                </td>
+                <td class="stat-cell">
+                  <span ng-if="tariff.responses !== 0">
+                    <span ng-bind="tariff.responses"></span> <span class="stat-dimension" ng-bind="'billing.answersDimension' | translate"></span>
+                  </span>
+                  <span ng-if="tariff.responses === 0">
+                    <span ng-bind="'billing.unlimited' | translate"></span> <span class="stat-dimension" ng-bind="'billing.answersDimension' | translate"></span>
+                  </span>
+                </td>
+                <td class="stat-cell">
+                  <div>
+                    <span ng-bind="tariff.price"></span> <span class="stat-dimension">$</span>
+                  </div>
+                </td>
+                <td class="stat-cell">
+                  <div ng-if="tariff.id === vm.userService.getUser().tariffId" ng-bind="'billing.current' | translate">
+
+                  </div>
+
+                  <div ng-if="tariff.id !== vm.userService.getUser().tariffId">
+                    <button ng-click="vm.onPurchase(tariff.id)" class="btn btn-primary" ng-bind="'billing.purchase' | translate"></button>
+                  </div>
+                </td>
+              </tr>
+
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
